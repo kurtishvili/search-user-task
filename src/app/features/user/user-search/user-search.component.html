@@ -1,0 +1,39 @@
+<div class="search-container">
+
+    <div class="title">
+        <h1>Helmes</h1>
+    </div>
+
+    <form>
+        <div class="form-wrapper">
+            <input name="username" placeholder="Search user from GitHub" [(ngModel)]="username">
+            <button type="submit" (click)="searchUser()">Find</button>
+        </div>
+    </form>
+
+    <div class="recent-searches-wrapper" *ngIf="recentSearches.length>0">
+        <p>Last 3 searches</p>
+        <div class="cards-wrapper">
+            <div class="card" *ngFor="let user of recentSearches" [routerLink]="[user]">{{user}}</div>
+        </div>
+    </div>
+
+    <div class="list-toggle">
+        <span>GitHub most popular users</span>
+        <span [class.active]="displayGrid" class="material-icons btn-switch-view" (click)="onGridClick()">
+            grid_view
+        </span>
+        <span [class.active]="displayList" class="material-icons btn-switch-view" (click)="onListClick()">
+            format_list_bulleted
+        </span>
+    </div>
+
+    <div class="user-list" *ngIf="displayList">
+        <app-list-item *ngFor="let user of users" [user]="user"></app-list-item>
+    </div>
+
+    <div class="user-grid" *ngIf="displayGrid">
+        <app-grid-item *ngFor="let user of users" [user]="user"></app-grid-item>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+.list-item-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .img-wrapper {
+        width: 100px;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .user-pers-info {
+        margin: 10px 0px 10px 40px;
+        flex: 1;
+
+        .username {
+            cursor: pointer;
+            outline: none;
+        }
+
+        .type {
+            margin-top: 10px;
+        }
+    }
+
+    .user-repos {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .title{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    }
+}

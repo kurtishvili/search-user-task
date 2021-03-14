@@ -1,0 +1,24 @@
+<div class="list-item-container">
+
+    <div class="img-wrapper" [routerLink]="[user.login]">
+        <img [src]="user.avatar_url">
+    </div>
+
+    <div class="user-pers-info">
+        <div class="full-name">
+            <a>Username: <b class="username" [routerLink]="[user.login]">{{user.login}}</b></a>
+        </div>
+        <div class="type">
+            type: <b>{{user.type}}</b>
+        </div>
+    </div>
+
+    <div class="user-repos">
+        <div class="title">User Repos</div>
+        <div *ngIf="user.repos?.length==0">No repos to display</div>
+        <a *ngFor="let repo of user.repos" [href]="repo.html_url" target="_blank">
+            {{repo.name}}
+        </a>
+    </div>
+
+</div>

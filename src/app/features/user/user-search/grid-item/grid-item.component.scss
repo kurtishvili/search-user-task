@@ -1,0 +1,41 @@
+.grid-container {
+    border: 1px solid black;
+    min-width: 49%;
+    margin: 10px 3px 10px 0;
+    display: inline-block;
+
+    .img-wrapper {
+        width: 150px;
+        margin: 5px auto;
+        cursor: pointer;
+        outline: none;
+
+        img {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .type {
+        text-align: center;
+    }
+    .username {
+        cursor: pointer;
+
+        text-align: center;
+
+        b {
+            outline: none;
+        }
+    }
+
+    .repos {
+        margin: 5px 10px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+}

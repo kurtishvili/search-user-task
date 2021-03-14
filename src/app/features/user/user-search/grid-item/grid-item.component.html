@@ -1,0 +1,14 @@
+<div class="grid-container">
+    <div class="img-wrapper" [routerLink]="[user.login]">
+        <img [src]="user.avatar_url">
+    </div>
+    <div class="username"> Username: <b [routerLink]="[user.login]">{{user.login}}</b> </div>
+    <div class="type"> type: <b>{{user.type}}</b> </div>
+    <div class="repos">
+        <span>User Repos</span>
+        <div *ngIf="user.repos?.length==0">No repos to display</div>
+        <a *ngFor="let repo of user.repos" [href]="repo.html_url"
+            target="_blank">{{repo.name}}</a>
+    </div>
+
+</div>

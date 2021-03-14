@@ -1,0 +1,52 @@
+<div class="profile-container">
+
+    <div class="title">
+        <h1>Helmes</h1>
+    </div>
+
+    <div class="back-btn-wrapper" routerLink="/">
+        <span class="material-icons">
+            arrow_back_ios
+        </span>
+        <div class="btn"> Back</div>
+    </div>
+
+    <div class="username"> {{user.login}} </div>
+
+    <div class="user">
+
+        <div class="img-wrapper">
+            <img [src]="user.avatar_url">
+        </div>
+
+        <div class="user-info">
+            <div class="user-login">
+                Username: <a [href]="user.html_url" target="_blank">{{user.login}} </a>
+            </div>
+            <div class="type">
+                Type: <b>{{user.type}}</b>
+            </div>
+            <div class="repos">
+                <div class="title">User Repos</div>
+                <div *ngIf="user.repos?.length==0">No repos to display</div>
+                <a *ngFor="let repo of user.repos" [href]="repo.html_url"
+                    target="_blank">{{repo.name}}</a>
+            </div>
+            <div class="organization">
+                <div class="title">User organizations</div>
+                <div *ngIf="user.organizations?.length==0">No organizations to display</div>
+                <div class="org-info" *ngFor="let organization of user.organizations">
+                    <div class="org-img-wrapper">
+                        <img [src]="organization.avatar_url">
+                    </div>
+                    <a href="https://github.com/{{organization.login}}" target="_blank"
+                        class="org-name">{{organization.login}} </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
